@@ -7,11 +7,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.net.MalformedURLException;
+
 public class Base {
     protected WebDriver driver;
 
     @Before
-    public void setup() {
+    public void setup() throws MalformedURLException {
         // This automatically uses 2.38 and is windows/mac agnostic
         System.setProperty("wdm.chromeDriverVersion", "2.38");
         System.setProperty("wdm.targetPath", "lib/drivers/auto/");
