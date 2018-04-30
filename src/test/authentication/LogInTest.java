@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static junit.framework.TestCase.assertTrue;
 
-public class LogInTest extends BaseLocalServer {
+public class LogInTest extends BaseSauce {
 
     @Test
     public void signInSuccessfully() {
