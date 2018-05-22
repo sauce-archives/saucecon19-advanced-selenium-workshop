@@ -30,12 +30,12 @@ public class LocationAdvanced extends Base {
 
         // Define Locators
 
-        String cssId = "";
-        String cssClassName = "";
-        String cssAttribute = "";
-        String cssMultAttribute = "";
-        String cssDescendant = "";
-        String cssChild = "";
+        String cssId = "#session_email";
+        String cssClassName = ".form-control";
+        String cssAttribute = "input[data-test=email]";
+        String cssMultAttribute = "input[data-test=email][placeholder=Email]";
+        String cssDescendant = "form input[data-test]";
+        String cssChild = "div.form-group > input";
 
 
 
@@ -65,9 +65,9 @@ public class LocationAdvanced extends Base {
 
         // Define Locators
 
-        String cssMultClass = "";
-        String cssFirstChild = "";
-        String cssSecondChildFromEnd = "";
+        String cssMultClass = ".nav-item.active";
+        String cssFirstChild = "a:first-child";
+        String cssSecondChildFromEnd = "a:nth-last-child(2)";
 
 
 
@@ -92,12 +92,12 @@ public class LocationAdvanced extends Base {
 
         // Define Locators
 
-        String cssLastChild = "";
-        String cssSecondChild = "";
-        String cssAttributeStartsWith = "";
-        String cssAttributeEndsWith = "";
-        String cssAttributeContains = "";
-        String cssPreviousSibling = "";
+        String cssLastChild = "a:last-child";
+        String cssSecondChild = "a:nth-child(2)";
+        String cssAttributeStartsWith = "a[data-test^=sign]";
+        String cssAttributeEndsWith = "a[data-test$=in]";
+        String cssAttributeContains = "a[data-test*=n-i";
+        String cssPreviousSibling = "a ~ a";
 
 
 
