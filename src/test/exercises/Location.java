@@ -26,14 +26,14 @@ public class Location extends Base {
 
         // Update these fields:
 
-        String id = "";
-        String name = "";
-        String className = "";
+        String id = "session_email";
+        String name = "session[email]";
+        String className = "form-control";
 
         // There is more than one Tag name that matches the Email Field, so you
         // need to specify which number it is in the tagIndex value
-        String tagName = "";
-        Integer tagIndex = 0;
+        String tagName = "input";
+        Integer tagIndex = 2;
 
 
 
@@ -56,13 +56,13 @@ public class Location extends Base {
 
         // Update these fields:
 
-        String name = "";
-        String className = "";
+        String name = "commit";
+        String className = "btn";
 
         // There is more than one Tag name that matches the Sign In Button, so you
         // need to specify which number it is in the tagIndex value
-        String tagName = "";
-        Integer tagIndex = 0;
+        String tagName = "input";
+        Integer tagIndex = 4;
 
 
 
@@ -83,13 +83,13 @@ public class Location extends Base {
 
         // Update these fields:
 
-        String linkText = "";
-        String partialLinkText = "";
+        String linkText = "Sign up";
+        String partialLinkText = "up";
 
         // There is more than one Tag name that matches the Sign Up Link, so you
         // need to specify which number it is in the tagIndex value
-        String tagName = "";
-        Integer tagIndex = 0;
+        String tagName = "a";
+        Integer tagIndex = 2;
 
 
 
