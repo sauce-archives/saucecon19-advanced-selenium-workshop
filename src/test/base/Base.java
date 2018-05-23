@@ -5,6 +5,7 @@ import org.junit.Before;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Base {
     protected WebDriver driver;
@@ -15,7 +16,11 @@ public class Base {
         System.setProperty("wdm.chromeDriverVersion", "2.38");
         System.setProperty("wdm.targetPath", "lib/drivers/auto/");
         ChromeDriverManager.getInstance().setup();
-        driver = new ChromeDriver();
+
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("disable-infobars");
+
+        driver = new ChromeDriver(chromeOptions);
     }
 
     @After
