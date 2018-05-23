@@ -19,4 +19,14 @@ public class BrowserInteractions extends Base {
         // "<html> ... </html>"
         driver.getPageSource();
     }
+
+    @Test
+    public void browserNavigation() {
+        driver.get("http://a.testaddressbook.com");
+
+        driver.navigate().to("http://google.com");
+        driver.navigate().refresh();
+        driver.navigate().back();
+        driver.navigate().forward();
+    }
 }
