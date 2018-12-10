@@ -5,7 +5,8 @@
 *.log
 
 # IntelliJ workspace file
-.idea/workspace.iml
+.idea/workspace.xml
+.idea/encodings.xml
 
 # BlueJ files
 *.ctxt
