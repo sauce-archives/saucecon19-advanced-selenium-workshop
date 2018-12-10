@@ -167,8 +167,66 @@ Checkout branch `068` to see the answers.
     ``` 
 
 6. Select **OK** in both the Environment Variables and Edit Configuration dialog boxes.
+7. Create a new Base class for running tests on Sauce Labs.
+    * Create a new Java class in the `base` package called **`BaseSauce.java`**
+    * Add the following at the top of the file:
+    ```
+    package test.base;
+    import org.junit.Before;
+    import org.junit.Rule;
+    import org.junit.rules.TestName;
+    import org.openqa.selenium.MutableCapabilities;
+    import org.openqa.selenium.chrome.ChromeOptions;
+    import org.openqa.selenium.remote.DesiredCapabilities;
+    import org.openqa.selenium.remote.RemoteWebDriver;
+    import java.net.MalformedURLException;
+    import java.net.URL;
+
+    public class BaseSauce extends Base {
+
+    @Rule
+    public TestName testName = new TestName()  {
+        public String getMethodName() {
+        return String.format("%s", super.getMethodName());
+        }
+    };
+    ```
+    * Create a `@Before` method with the following:
+    ```
+    public void setup() throws MalformedURLException {
+        String username = System.getenv("SAUCE_USERNAME");
+        String accessKey = System.getenv("SAUCE_ACCESS_KEY");
+        String methodName = testName.getMethodName();
+
+        String sauceUrl = "https://"+username+":"+accessKey+"@ondemand.saucelabs.com/wd/hub";
+        URL url = new URL(sauceUrl);
+
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.setExperimentalOption("w3c", true);
+    ```
+    * Create your `MutableCapabilities` object with the following:
+    ```
+    MutableCapabilities sauceCaps = new MutableCapabilities();
+        sauceCaps.setCapability("name", methodName);
+        sauceCaps.setCapability("user", username);
+        sauceCaps.setCapability("accessKey", accessKey);
+    ```
+    * Create your `DesiredCapabilities` object with the following:
+    ```
+    DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("sauce:options", sauceCaps);
+        caps.setCapability("browserName", "googlechrome");
+        caps.setCapability("browserVersion", "61.0");
+        caps.setCapability("platformName", "windows 10");
+        caps.setCapability("seleniumVersion", "3.11.0");
+        caps.setCapability(ChromeOptions.CAPABILITY,  chromeOptions);
+    ```
+    * Pass the url, and caps objects into the remote web driver like so:
+    ```
+    driver = new RemoteWebDriver(url, caps);
+    ```
 #### Part Two: Write the Assertion
-7. Navigate back to the **LogInTest** class. In the `@Test` method **`signInSuccessfully()`**, create the following **`Boolean`**:
+8. Navigate back to the **LogInTest** class. In the `@Test` method **`signInSuccessfully()`**, create the following **`Boolean`**:
     ```
     Boolean result = explicitWait.until(ExpectedConditions.urlMatches("https://www.saucedemo.com/inventory.html"));
     ```
@@ -241,14 +299,41 @@ Checkout branch `068` to see the answers.
 
 ### Exercise 8: Create Page Objects
 1. Checkout branch ``08_create_page_objects``.
-2. In the package **Pages**, create a two new classes:
+2. In the package **Pages**, make note of the two new classes:
     * **SignInPage**
     * **HomePage**
-3. Select **HomePage** and add the following:
+3. Select **HomePage** and edit the following:
+    * Add the following class selector for the sauce bot icon on the inventory.html page
     ```
-    
+    private By sauceBot = By.className("peek");
     ```
-4. Select **SignInPage** and add the following:
+    * Add a `Boolean` value at the bottom of the page to confirm the presence of **`sauceBot`**:
     ```
+    Boolean isSignedIn() { return driver.findElements(menu).size > 0; }
     ```
-5. Run all tests in the **LogInTest** class to confirm if they still pass in both IntelliJ and the Sauce Labs Dashboard.
+    * Uncomment the package import at the top of the file:
+    ```
+    import org.openqa.selenium.By;
+    ```
+4. Select **SignInPage** and edit the following methods:
+    * **`signIn`**:
+    ```
+    this.driver = driver;
+    ```
+    * **`signInUnsuccessfully`**:
+    ```
+    fillForm(data);
+    ```
+    * **`hasErrorMessage`**:
+    ```
+    return driver.findElements(error).size() > 0;
+    ```
+    * **`fillForm`**:
+    ```
+    driver.findElement(userField).sendKeys(data.getUsername());
+    driver.findElement(passwordField).sendKeys(data.getPassword());
+    driver.findElement(loginButton).click();
+    ```
+5. Save your changes and run all tests in the **LogInTest** class to confirm if they still pass in both IntelliJ and the Sauce Labs Dashboard.
+6. To see the answers, checkout branch `09_base_page_example`
+    >To test your knowledge, try and create a `BasePage` object to abstract re-usable actions such as `sendKeys()` and `click()`. You can checkout the branch `09_complete_answers` to see the answer.
