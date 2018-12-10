@@ -7,10 +7,10 @@ import test.data.*;
 public class SignInPage {
     private WebDriver driver;
 
-    private By userField = By.cssSelector("[data-test='username']");
-    private By passwordField = By.cssSelector("[data-test='password']");
+    private By userField = By.cssSelector("input[data-test='username']");
+    private By passwordField = By.cssSelector("input[data-test='password']");
     private By loginButton = By.className("login-button");
-    private By error = By.cssSelector("[data-test='error']");
+    private By error = By.className("fa-times-circle");
 
     public static SignInPage visit(WebDriver driver) {
         SignInPage page = new SignInPage(driver);
@@ -22,9 +22,7 @@ public class SignInPage {
         this.driver = driver;
     }
 
-    public void signIn(User data) {
-        fillForm(data);
-    }
+    public void signIn(User data) { fillForm(data); }
 
     public void signInUnsuccessfully(User data) {
         fillForm(data);
@@ -38,5 +36,6 @@ public class SignInPage {
         driver.findElement(userField).sendKeys(data.getUsername());
         driver.findElement(passwordField).sendKeys(data.getPassword());
         driver.findElement(loginButton).click();
+
     }
 }

@@ -2,6 +2,7 @@ package test.authentication;
 
 import test.base.*;
 import test.data.*;
+import test.pages.*;
 
 import org.junit.Test;
 

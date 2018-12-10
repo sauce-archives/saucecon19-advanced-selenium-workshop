@@ -12,7 +12,7 @@ public class User {
     public static User validUser() {
         Map<String, String> data = new HashMap<String, String>();
         data.put("username", "standard_user");
-        data.put("password", "secret_saucer");
+        data.put("password", "secret_sauce");
         return new User(data);
     }
 

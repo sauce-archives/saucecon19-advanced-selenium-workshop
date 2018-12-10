@@ -2,14 +2,14 @@ package test.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import test.base.Base;
 
-public class HomePage extends Base {
+public class HomePage {
     private WebDriver driver;
 
-    private By menu = By.cssSelector("#menu_button_container");
+    private By sauceBot = By.className("peek");
 
     public HomePage(WebDriver driver) {this.driver = driver; }
 
-    //public Boolean isSignedIn() { return driver.findElements(menu).size > 0; }
+    public Boolean isSignedIn() {
+        return driver.findElements(sauceBot).size() > 0; }
 }
