@@ -104,40 +104,40 @@ Double-click the installer package to begin the installation.
 
 #### Ensure IntelliJ is Correctly Configured:
 
-1. ** Run Hello World **
-    * In IntelliJ, select **File > New > Project. **
-    * In the ** New Project ** dialog window, select ** Java ** (default).
-    * IntelliJ should automatically detect the JDK and appear in the ** Project SDK ** field. If you don't see the JDK, select ** New ** and navigate to where you installed the JDK. 
-    * Select ** Next **, then select ** Create project from template > Java Hello World. **
-    * Name the project ** SauceDemo ** and select ** Finish. ** 
+1. **Run Hello World**
+    * In IntelliJ, select **File > New > Project.**
+    * In the **New Project** dialog window, select **Java** (default).
+    * IntelliJ should automatically detect the JDK and appear in the **Project SDK** field. If you don't see the JDK, select **New** and navigate to where you installed the JDK. 
+    * Select **Next**, then select **Create project from template > Java Hello World.**
+    * Name the project **SauceDemo** and select **Finish.** 
         > you can also decide whether or not to display IntelliJ tool tips.
-    * From the main toolbar, select ** Run > Run 'Main' **.
+    * From the main toolbar, select **Run > Run 'Main'**.
         > In the main console at the bottom the words ` Hello World!` should appear, along with ` Process finished with exit code 0`. 
 
-2. ** Configure the Selenium Standalone Server **
+2. **Configure the Selenium Standalone Server**
     * Open a browser and navigate to the [SeleniumHQ Downloads page](https://www.seleniumhq.org/download/).
-    * Under ** Selenium Standalone Server ** select the version link to download the file (extract/unzip the archive if necessary).
+    * Under **Selenium Standalone Server** select the version link to download the file (extract/unzip the archive if necessary).
         > You can download the package to any directory, just ensure you remember the location when configuring Selenium in IntelliJ.
-    * In IntelliJ, select ** File > Project Structure > Modules. **
-    * Select the ** Dependencies ** tab and navigate to the bottom of the window.
-    * Select the ** + ** symbol, followed by ** JARs or Directories. **
-    * Navigate to the location of the ** Selenium .jar ** file and select ** Open. **
-    * Select ** Apply ** followed by ** OK. **
-    * In the **Project** pane of IntelliJ, select the triangle next to ** External Libraries **
+    * In IntelliJ, select **File > Project Structure > Modules.**
+    * Select the **Dependencies** tab and navigate to the bottom of the window.
+    * Select the **+** symbol, followed by **JARs or Directories.**
+    * Navigate to the location of the **Selenium .jar** file and select **Open.**
+    * Select **Apply** followed by **OK.**
+    * In the **Project** pane of IntelliJ, select the triangle next to **External Libraries**
         > You should see the Selenium Standalone Server `.jar` file
 
-3. ** Configure the TestNG Framework **
+3. **Configure the TestNG Framework**
     * In IntelliJ, select **File > Project Structure > Modules.**
     * Select the **Dependecies** tab and navigate to the bottom of the window.
-    * elect the ** + ** symbol, followed by ** JARs or Directories. **
+    * elect the **+** symbol, followed by **JARs or Directories.**
     * Navigate to `Applications/IntelliJ IDEA CE/Contents/plugins/lib/`
     * Select both `testng-plugin.jar` and `testng.jar`, select **Apply > OK.**
-    * In the **Project** pane of IntelliJ, select the triangle next to ** External Libraries **
+    * In the **Project** pane of IntelliJ, select the triangle next to **External Libraries**
         > You should see the TestNG `.jar` files
         
 #### Run The Sample Project in IntelliJ:
 4. **Add the Test Script**
-    * In the ** Project ** pane of IntelliJ, right-click on **src,** select **New > Java Class.**
+    * In the **Project** pane of IntelliJ, right-click on **src,** select **New > Java Class.**
     * Name the class ` InstantJavaTestNGTest `, then select **OK.**
     * Download the test script from [here](https://github.com/saucelabs-training/demo-java/blob/master/InstantSauceTest.java).
     * In IntelliJ, delete any code from your default class and paste in the test script
