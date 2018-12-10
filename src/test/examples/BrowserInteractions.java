@@ -8,12 +8,12 @@ public class BrowserInteractions extends Base {
 
     @Test
     public void browserInformation() {
-        driver.get("http://a.testaddressbook.com");
+        driver.get("https://www.saucedemo.com");
 
         // "Address Book"
         driver.getTitle();
 
-        // "http://a.testaddressbook.com/"
+        // "https://saucedemo.com/"
         driver.getCurrentUrl();
 
         // "<html> ... </html>"
@@ -22,7 +22,7 @@ public class BrowserInteractions extends Base {
 
     @Test
     public void browserNavigation() {
-        driver.get("http://a.testaddressbook.com");
+        driver.get("https://www.saucedemo.com");
 
         driver.navigate().to("http://google.com");
         driver.navigate().refresh();

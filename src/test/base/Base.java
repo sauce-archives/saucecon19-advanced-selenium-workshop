@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.net.MalformedURLException;
 
-public class Base {
+public abstract class Base {
     protected WebDriver driver;
 
     @Before

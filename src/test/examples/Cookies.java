@@ -11,11 +11,11 @@ public class Cookies extends Base {
 
     @Test
     public void cIsForCookie() {
-        driver.get("http://a.testaddressbook.com");
+        driver.get("https://www.saucedemo.com");
 
         // Create
         Cookie cookie = new Cookie.Builder("name", "value")
-                .domain("a.testaddressbook.com")
+                .domain("saucedemo.com")
                 .expiresOn(new Date(System.currentTimeMillis() + 500000000))
                 .isHttpOnly(true)
                 .isSecure(false)
@@ -26,7 +26,7 @@ public class Cookies extends Base {
         driver.manage().addCookie(cookie);
 
         // Read
-        driver.get("http://a.testaddressbook.com/mypath");
+        driver.get("https://www.saucedemo.com/mypath");
         driver.manage().getCookieNamed("name");
 
         // Get All

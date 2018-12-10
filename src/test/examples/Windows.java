@@ -14,7 +14,7 @@ public class Windows extends Base {
         driver.get("https://google.com");
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.open('https://www.example.com');");
+        js.executeScript("window.open('https://www.saucedemo.com');");
 
         String origWindow = driver.getWindowHandle();
         Set handles = driver.getWindowHandles();

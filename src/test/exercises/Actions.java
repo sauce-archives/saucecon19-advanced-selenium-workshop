@@ -18,28 +18,30 @@ public class Actions extends Base {
         WebDriverWait wait = new WebDriverWait(driver, 10);
 
         // navigate to desired page
-        driver.get("http://a.testaddressbook.com/sign_up");
+        driver.get("https://www.saucedemo.com");
 
         // Specify Data
 
-        String email = "user@example.com";
-        String password = "password";
+        String username = "standard_user";
+        String password = "secret_sauce";
+        String userField = "[data-test='username']";
+        String passField = "[data-test='password']";
+        String loginBtn = "[value='LOGIN']";
 
-        // wait for Email Field
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("user_email")));
+        // wait for username field
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(userField)));
 
-        // fill out email field using `email` variable
-        driver.findElement(By.id("user_email")).sendKeys(email);
+        // send username keystrokes
+        driver.findElement(By.cssSelector(userField)).sendKeys(username);
 
-        // fill out password field using `password` variable
-        driver.findElement(By.id("user_password")).sendKeys(password);
+        // send password keystrokes
+        driver.findElement(By.cssSelector(passField)).sendKeys(password);
 
-        // click Sign Up button (or Submit Form)
-        driver.findElement(By.name("commit")).click();
+        // click login button to submit keystrokes
+        driver.findElement(By.cssSelector(loginBtn)).click();
 
-
-        // Note that because this user already exists, Sign Up will not be successful
-        wait.until(ExpectedConditions.urlMatches("http://a.testaddressbook.com/users"));
+        // wait for expected URL to appear
+        wait.until(ExpectedConditions.urlMatches("https://www.saucedemo.com/inventory.html"));
     }
 
 }

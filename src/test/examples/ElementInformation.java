@@ -9,22 +9,22 @@ public class ElementInformation extends Base{
 
     @Test
     public void signInLink() {
-        driver.get("http://a.testaddressbook.com");
+        driver.get("https://www.saucedemo.com");
 
-        // "Sign In"
-        driver.findElement(By.id("sign-in")).getText();
+        // Gather the Text of Element
+        driver.findElement(By.id("login_button_container")).getText();
 
-        // "a"
-        driver.findElement(By.id("sign-in")).getTagName();
+        // Gather the Tag Name
+        driver.findElement(By.id("login_button_container")).getTagName();
 
-        // "sign-in"
-        driver.findElement(By.id("sign-in")).getAttribute("data-test");
+        // Gather the Attribute Data
+        driver.findElement(By.id("login_button_container")).getAttribute("data-test");
 
-        // true
-        driver.findElement(By.id("sign-in")).isDisplayed();
+        // Determine if Element Rendered on Page
+        driver.findElement(By.id("login_button_container")).isDisplayed();
 
-        // true
-        driver.findElement(By.id("sign-in")).isEnabled();
+        // Determine if Actions can be Performed on Element
+        driver.findElement(By.id("login_button_container")).isEnabled();
     }
 
 }

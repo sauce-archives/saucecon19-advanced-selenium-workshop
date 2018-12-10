@@ -1,14 +1,12 @@
 package test.exercises;
 
-import test.base.*;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import test.base.Base;
 
 import static junit.framework.TestCase.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 //
@@ -21,21 +19,21 @@ public class LocationAdvanced extends Base {
 
     @Before
     public void navigate() {
-        driver.get("http://a.testaddressbook.com/sign_in");
+        driver.get("https://www.saucedemo.com");
     }
 
 
     @Test
-    public void locateEmailField() {
+    public void locateUserField() {
 
         // Define Locators
 
-        String cssId = "#session_email";
-        String cssClassName = ".form-control";
-        String cssAttribute = "input[data-test=email]";
-        String cssMultAttribute = "input[data-test=email][placeholder=Email]";
+        //String cssId = "#session_email";
+        String cssClassName = ".login-input";
+        String cssAttribute = "input[data-test='username']";
+        String cssMultAttribute = "input[data-test='username'][placeholder='Username']";
         String cssDescendant = "form input[data-test]";
-        String cssChild = "div.form-group > input";
+        String cssChild = "div.login-box > form > input";
 
 
 
@@ -43,16 +41,15 @@ public class LocationAdvanced extends Base {
         // ALL YOU NEED TO KNOW IS THAT IF YOU RUN THIS TEST
         // WITH THE RIGHT VALUES ABOVE IT WILL PASS
 
-        WebElement emailField = driver.findElement(By.id("session_email"));
+        WebElement userField = driver.findElements(By.xpath("//*")).get(9);
+        //assertEquals(emailField, driver.findElement(By.cssSelector(cssId)));
+        assertEquals(userField, driver.findElement(By.cssSelector(cssClassName)));
+        assertEquals(userField, driver.findElement(By.cssSelector(cssAttribute)));
+        assertEquals(userField, driver.findElement(By.cssSelector(cssMultAttribute)));
+        assertEquals(userField, driver.findElement(By.cssSelector(cssDescendant)));
+        assertEquals(userField, driver.findElement(By.cssSelector(cssChild)));
 
-        assertEquals(emailField, driver.findElement(By.cssSelector(cssId)));
-        assertEquals(emailField, driver.findElement(By.cssSelector(cssClassName)));
-        assertEquals(emailField, driver.findElement(By.cssSelector(cssAttribute)));
-        assertEquals(emailField, driver.findElement(By.cssSelector(cssMultAttribute)));
-        assertEquals(emailField, driver.findElement(By.cssSelector(cssDescendant)));
-        assertEquals(emailField, driver.findElement(By.cssSelector(cssChild)));
-
-        assertTrue(cssId.contains("#"));
+        //assertTrue(cssId.contains("#"));
         assertTrue(cssClassName.contains("."));
         assertTrue(cssAttribute.contains("="));
         assertTrue(cssMultAttribute.contains("]["));
@@ -61,43 +58,40 @@ public class LocationAdvanced extends Base {
     }
 
     @Test
-    public void locateHomeLink() {
+    public void locatePasswordField() {
 
         // Define Locators
 
-        String cssMultClass = ".nav-item.active";
-        String cssFirstChild = "a:first-child";
-        String cssSecondChildFromEnd = "a:nth-last-child(2)";
-
-
+        String cssDescendant = "div.login-box > form > input:nth-child(2)";
+        String css2ndChild = "input:nth-child(2)";
+        String cssSecondChildFromEnd = "input:nth-last-child(2)";
 
         // IGNORE THE DETAILS OF THE ASSERTIONS BELOW
         // ALL YOU NEED TO KNOW IS THAT IF YOU RUN THIS TEST
         // WITH THE RIGHT VALUES ABOVE IT WILL PASS
 
-        WebElement homeLink = driver.findElement(By.tagName("a"));
+        WebElement passField = driver.findElement(By.cssSelector("input[data-test='password'][placeholder='Password']"));
 
-        assertEquals(homeLink, driver.findElement(By.cssSelector(cssMultClass)));
-        assertEquals(homeLink, driver.findElement(By.cssSelector(cssFirstChild)));
-        assertEquals(homeLink, driver.findElement(By.cssSelector(cssSecondChildFromEnd)));
+        assertEquals(passField, driver.findElement(By.cssSelector(cssDescendant)));
+        assertEquals(passField, driver.findElement(By.cssSelector(css2ndChild)));
+        assertEquals(passField, driver.findElement(By.cssSelector(cssSecondChildFromEnd)));
 
-        assertTrue(cssMultClass.contains("."));
-        assertFalse(cssMultClass.contains(" "));
-        assertTrue(cssFirstChild.contains(":first"));
+        assertTrue(cssDescendant.contains("."));
+        assertTrue(css2ndChild.contains(":nth-child"));
         assertTrue(cssSecondChildFromEnd.contains("nth-last"));
     }
 
     @Test
-    public void locateSignInLink() {
+    public void locateLogInButton() {
 
         // Define Locators
 
-        String cssLastChild = "a:last-child";
-        String cssSecondChild = "a:nth-child(2)";
-        String cssAttributeStartsWith = "a[data-test^=sign]";
-        String cssAttributeEndsWith = "a[data-test$=in]";
-        String cssAttributeContains = "a[data-test*=n-i";
-        String cssPreviousSibling = "a ~ a";
+        String cssLastChild = "input:last-child";
+        String cssThirdChild = "input:nth-child(3)";
+        String cssAttributeStartsWith = "input[type^=sub]";
+        String cssAttributeEndsWith = "input[type$=mit]";
+        String cssAttributeContains = "input[type*=bm";
+        String cssPreviousSiblings = "input ~ input ~ input";
 
 
 
@@ -105,21 +99,21 @@ public class LocationAdvanced extends Base {
         // ALL YOU NEED TO KNOW IS THAT IF YOU RUN THIS TEST
         // WITH THE RIGHT VALUES ABOVE IT WILL PASS
 
-        WebElement signInLink = driver.findElement(By.id("sign-in"));
+        WebElement logInButton = driver.findElement(By.cssSelector("input[value='LOGIN']"));
 
-        assertEquals(signInLink, driver.findElement(By.cssSelector(cssLastChild)));
-        assertEquals(signInLink, driver.findElement(By.cssSelector(cssSecondChild)));
-        assertEquals(signInLink, driver.findElement(By.cssSelector(cssAttributeStartsWith)));
-        assertEquals(signInLink, driver.findElement(By.cssSelector(cssAttributeEndsWith)));
-        assertEquals(signInLink, driver.findElement(By.cssSelector(cssAttributeContains)));
-        assertEquals(signInLink, driver.findElement(By.cssSelector(cssPreviousSibling)));
+        assertEquals(logInButton, driver.findElement(By.cssSelector(cssLastChild)));
+        assertEquals(logInButton, driver.findElement(By.cssSelector(cssThirdChild)));
+        assertEquals(logInButton, driver.findElement(By.cssSelector(cssAttributeStartsWith)));
+        assertEquals(logInButton, driver.findElement(By.cssSelector(cssAttributeEndsWith)));
+        assertEquals(logInButton, driver.findElement(By.cssSelector(cssAttributeContains)));
+        assertEquals(logInButton, driver.findElement(By.cssSelector(cssPreviousSiblings)));
 
         assertTrue(cssLastChild.contains(":last"));
-        assertTrue(cssSecondChild.contains("nth-c"));
+        assertTrue(cssThirdChild.contains("nth-c"));
         assertTrue(cssAttributeStartsWith.contains("^="));
         assertTrue(cssAttributeEndsWith.contains("$="));
         assertTrue(cssAttributeContains.contains("*="));
-        assertTrue(cssPreviousSibling.contains(" ~ "));
+        assertTrue(cssPreviousSiblings.contains(" ~ "));
     }
 
 }

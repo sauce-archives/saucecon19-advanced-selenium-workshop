@@ -18,22 +18,20 @@ public class Location extends Base {
 
     @Before
     public void navigate() {
-        driver.get("http://a.testaddressbook.com/sign_in");
+        driver.get("https://www.saucedemo.com");
     }
 
     @Test
-    public void locateEmailField() {
+    public void locateUsernameField() {
 
-        // Update these fields:
+        // Update the class Name field:
+        String className = "login-input";
 
-        String id = "session_email";
-        String name = "session[email]";
-        String className = "form-control";
-
-        // There is more than one Tag name that matches the Email Field, so you
+        // There is more than one Tag name that matches the "login-input" field, so you
         // need to specify which number it is in the tagIndex value
         String tagName = "input";
-        Integer tagIndex = 2;
+        String cssLocator = "[data-test='username']";
+        Integer tagIndex = 0;
 
 
 
@@ -41,28 +39,56 @@ public class Location extends Base {
         // ALL YOU NEED TO KNOW IS THAT IF YOU RUN THIS TEST
         // WITH THE RIGHT VALUES ABOVE IT WILL PASS
 
-        // Obfuscated way of getting the Email Field
-        WebElement emailField = driver.findElements(By.xpath("//*")).get(30);
+        // Obfuscated way of getting the Username Field
+        WebElement userField = driver.findElements(By.xpath("//*")).get(9);
 
         // Assert correct element has been found withe the updated strings
-        assertEquals(emailField, driver.findElement(By.id(id)));
-        assertEquals(emailField, driver.findElement(By.name(name)));
-        assertEquals(emailField, driver.findElement(By.className(className)));
-        assertEquals(emailField, driver.findElements(By.tagName(tagName)).get(tagIndex));
+        //assertEquals(userField, driver.findElement(By.id(id)));
+        assertEquals(userField, driver.findElement(By.cssSelector(cssLocator)));
+        assertEquals(userField, driver.findElement(By.className(className)));
+        assertEquals(userField, driver.findElements(By.tagName(tagName)).get(tagIndex));
     }
 
     @Test
-    public void locateSignInButton() {
+    public void locatePasswordField() {
+
+        // Update the class Name field:
+        String className = "login-input";
+
+        // There is more than one Tag name that matches the "login-input" field, so you
+        // need to specify which number it is in the tagIndex value
+        String tagName = "input";
+        String cssLocator = "[data-test='password']";
+        Integer tagIndex = 1;
+
+
+
+        // IGNORE THE DETAILS OF THE ASSERTIONS BELOW
+        // ALL YOU NEED TO KNOW IS THAT IF YOU RUN THIS TEST
+        // WITH THE RIGHT VALUES ABOVE IT WILL PASS
+
+        // Obfuscated way of getting the Login Box Field
+        WebElement passwordField = driver.findElements(By.xpath("//*")).get(10);
+
+        // Assert correct element has been found withe the updated strings
+        assertEquals(passwordField, driver.findElement(By.cssSelector(cssLocator)));
+        assertEquals(passwordField, driver.findElement(By.className(className)));
+        assertEquals(passwordField, driver.findElements(By.tagName(tagName)).get(tagIndex));
+    }
+
+    @Test
+    public void locateLogInButton() {
 
         // Update these fields:
 
-        String name = "commit";
-        String className = "btn";
+        //String name = "LOGIN";
+        String className = "login-button";
 
         // There is more than one Tag name that matches the Sign In Button, so you
         // need to specify which number it is in the tagIndex value
         String tagName = "input";
-        Integer tagIndex = 4;
+        String cssLocator = "[value='LOGIN']";
+        Integer tagIndex = 2;
 
 
 
@@ -71,39 +97,12 @@ public class Location extends Base {
         // WITH THE RIGHT VALUES ABOVE IT WILL PASS
 
         // Obfuscated way of getting the Sign in Button
-        WebElement signInButton = driver.findElements(By.xpath("//*")).get(34);
+        WebElement signInButton = driver.findElements(By.xpath("//*")).get(11);
 
-        assertEquals(signInButton, driver.findElement(By.name(name)));
+        assertEquals(signInButton, driver.findElement(By.cssSelector(cssLocator)));
         assertEquals(signInButton, driver.findElement(By.className(className)));
         assertEquals(signInButton, driver.findElements(By.tagName(tagName)).get(tagIndex));
     }
 
-    @Test
-    public void locateSignUpLink() {
-
-        // Update these fields:
-
-        String linkText = "Sign up";
-        String partialLinkText = "up";
-
-        // There is more than one Tag name that matches the Sign Up Link, so you
-        // need to specify which number it is in the tagIndex value
-        String tagName = "a";
-        Integer tagIndex = 2;
-
-
-
-        // IGNORE THE DETAILS OF THE ASSERTIONS BELOW
-        // ALL YOU NEED TO KNOW IS THAT IF YOU RUN THIS TEST
-        // WITH THE RIGHT VALUES ABOVE IT WILL PASS
-
-        // Obfuscated way of getting the Sign Up Link
-        WebElement signUpLink = driver.findElements(By.xpath("//*")).get(36);
-
-        assertEquals(signUpLink, driver.findElement(By.linkText(linkText)));
-        assertEquals(signUpLink, driver.findElement(By.partialLinkText(partialLinkText)));
-        assertEquals(signUpLink, driver.findElements(By.tagName(tagName)).get(tagIndex));
-
-    }
 
 }

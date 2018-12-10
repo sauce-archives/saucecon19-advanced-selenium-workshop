@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AddressBookJUnit.iml" filepath="$PROJECT_DIR$/AddressBookJUnit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Getting-Started-with-Selenium.iml" filepath="$PROJECT_DIR$/Getting-Started-with-Selenium.iml" />
     </modules>
   </component>
 </project>

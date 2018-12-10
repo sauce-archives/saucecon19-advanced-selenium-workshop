@@ -11,9 +11,9 @@ public class JSExecutor extends Base {
 
     @Test
     public void jsExecute() {
-        driver.get("http://a.testaddressbook.com");
+        driver.get("https://www.saucedemo.com");
 
-        WebElement element = driver.findElement(By.id("sign-in"));
+        WebElement element = driver.findElement(By.className("login-button"));
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element);
