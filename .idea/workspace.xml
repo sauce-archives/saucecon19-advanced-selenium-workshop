@@ -4,9 +4,6 @@
     <list default="true" id="63f3a3f1-25e0-40c9-a3a9-3258a72abeff" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/src/test/pages/BasePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/authentication/LogInTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/authentication/LogInTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/data/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/data/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/pages/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/pages/SignInPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/pages/SignInPage.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -42,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/pages/HomePage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+            <state relative-caret-position="225">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -54,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/pages/SignInPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+            <state relative-caret-position="338">
+              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -69,8 +66,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/pages/BasePage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" selection-end-line="24" selection-end-column="1" />
+            <state relative-caret-position="345">
+              <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -156,7 +153,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="08_create_page_objects" />
+        <entry key="$PROJECT_DIR$" value="09_complete_answers" />
       </map>
     </option>
     <option name="PREVIEW_PUSH_PROTECTED_ONLY" value="true" />
@@ -183,11 +180,11 @@
         <option value="$PROJECT_DIR$/src/test/exercises/UserJourney.java" />
         <option value="$PROJECT_DIR$/src/test/base/Base.java" />
         <option value="$PROJECT_DIR$/src/test/base/BaseSauce.java" />
-        <option value="$PROJECT_DIR$/src/test/pages/BasePage.java" />
         <option value="$PROJECT_DIR$/src/test/authentication/LogInTest.java" />
         <option value="$PROJECT_DIR$/src/test/data/User.java" />
-        <option value="$PROJECT_DIR$/src/test/pages/SignInPage.java" />
         <option value="$PROJECT_DIR$/src/test/pages/HomePage.java" />
+        <option value="$PROJECT_DIR$/src/test/pages/BasePage.java" />
+        <option value="$PROJECT_DIR$/src/test/pages/SignInPage.java" />
       </list>
     </option>
   </component>
@@ -267,7 +264,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544471167101" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544471369161" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -415,14 +412,11 @@
       <workItem from="1544121443518" duration="435000" />
       <workItem from="1544122291791" duration="8084000" />
       <workItem from="1544139507325" duration="3799000" />
-      <workItem from="1544215702286" duration="13746000" />
+      <workItem from="1544215702286" duration="13942000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LogInTest_signInSuccessfully - 2018.12.10 at 11h 24m 38s.xml">
-      <configuration name="LogInTest.signInSuccessfully" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="LogInTest_signInSuccessfully - 2018.12.10 at 11h 29m 39s.xml">
       <configuration name="LogInTest.signInSuccessfully" configurationId="JUnit" />
     </history-entry>
@@ -450,9 +444,12 @@
     <history-entry file="LogInTest - 2018.12.10 at 11h 43m 36s.xml">
       <configuration name="LogInTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="LogInTest - 2018.12.10 at 11h 46m 08s.xml">
+      <configuration name="LogInTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76556000" />
+    <option name="totallyTimeSpent" value="76752000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1478" y="470" width="1440" height="800" extended-state="0" />
@@ -467,9 +464,9 @@
       <window_info id="Image Layers" order="6" />
       <window_info anchor="bottom" id="Messages" order="0" sideWeight="0.49785408" weight="0.32630098" />
       <window_info anchor="bottom" id="Version Control" order="1" sideWeight="0.49928468" weight="0.32911393" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.32911393" />
+      <window_info anchor="bottom" id="Terminal" order="2" visible="true" weight="0.32909605" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997175" />
-      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.4985694" visible="true" weight="0.45762712" />
+      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.4985694" weight="0.45762712" />
       <window_info anchor="bottom" id="Database Changes" order="5" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50143063" side_tool="true" weight="0.4556962" />
@@ -522,6 +519,18 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/pages/BasePage.java</url>
+          <line>24</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
@@ -806,16 +815,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/authentication/LogInTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/data/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
@@ -826,23 +825,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/pages/BasePage.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/authentication/LogInTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" selection-end-line="24" selection-end-column="1" />
+        <state relative-caret-position="270">
+          <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/pages/SignInPage.java">
+    <entry file="file://$PROJECT_DIR$/src/test/pages/BasePage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        <state relative-caret-position="345">
+          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -851,8 +850,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/pages/HomePage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        <state relative-caret-position="225">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/pages/SignInPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

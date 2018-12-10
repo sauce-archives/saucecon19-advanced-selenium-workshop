@@ -4,9 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import test.data.*;
 
-public class SignInPage {
-    private WebDriver driver;
-
+public class SignInPage extends BasePage {
     private By userField = By.cssSelector("input[data-test='username']");
     private By passwordField = By.cssSelector("input[data-test='password']");
     private By loginButton = By.className("login-button");
@@ -33,9 +31,8 @@ public class SignInPage {
     }
 
     private void fillForm(User data) {
-        driver.findElement(userField).sendKeys(data.getUsername());
-        driver.findElement(passwordField).sendKeys(data.getPassword());
-        driver.findElement(loginButton).click();
-
+        sendKeys(userField, data.getUsername());
+        sendKeys(passwordField, data.getPassword());
+        click(loginButton);
     }
 }
