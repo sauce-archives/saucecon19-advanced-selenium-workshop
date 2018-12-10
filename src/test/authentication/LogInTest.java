@@ -1,112 +1,36 @@
 package test.authentication;
 
-import junit.framework.TestCase;
+import test.base.*;
+import test.data.*;
+
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import test.base.BaseSauce;
-import test.data.User;
 
-import java.util.HashMap;
-import java.util.Map;
+import static org.junit.Assert.*;
 
-public class LogInTest extends BaseSauce {
+public class LogInTest extends Base {
 
     @Test
     public void signInSuccessfully() {
-        driver.get("https://www.saucedemo.com");
+        SignInPage signInPage = SignInPage.visit(driver);
+        signInPage.signIn(User.validUser());
 
-        String username = "standard_user";
-        String password = "secret_sauce";
-
-        WebDriverWait explicitWait = new WebDriverWait(driver, 10);
-
-        WebElement usernameElement = explicitWait.until(
-                ExpectedConditions.presenceOfElementLocated(By.cssSelector("[data-test='username']")));
-
-        usernameElement.sendKeys(username);
-        driver.findElement(By.cssSelector("[data-test='password']")).sendKeys(password);
-        driver.findElement(By.className("login-button")).submit();
-
-        Boolean result = explicitWait.until(ExpectedConditions.urlMatches("https://www.saucedemo.com/inventory.html"));
-
-        TestCase.assertTrue(result);
-
-        if (result){
-           JavascriptExecutor js = (JavascriptExecutor)driver;
-           js.executeScript("sauce:job-result=" + (result));
-       }
+        HomePage homePage = new HomePage(driver);
+        assertTrue(homePage.isSignedIn());
     }
 
     @Test
     public void signInUnsuccessfully() {
-        driver.get("https://www.saucedemo.com");
+        SignInPage signInPage = SignInPage.visit(driver);
+        signInPage.signInUnsuccessfully(User.invalidUser());
 
-        Map<String, String> blankPassword = new HashMap<String, String>();
-        blankPassword.put("password", "");
-
-        User user = new User(blankPassword);
-        String username = user.getUsername();
-        String password = user.getPassword();
-
-        WebDriverWait explicitWait = new WebDriverWait(driver, 10);
-
-        WebElement usernameElement = explicitWait.until(
-                ExpectedConditions.presenceOfElementLocated(By.cssSelector("[data-test='username']")));
-
-        usernameElement.sendKeys(username);
-        driver.findElement(By.cssSelector("[data-test='password']")).sendKeys(password);
-        driver.findElement(By.className("login-button")).submit();
-
-        WebElement error = explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.className("fa-times-circle")));
-        String cssAttributeStartsWith = "svg[data-icon^=times]";
-
-        Boolean result = driver.findElements(By.cssSelector(cssAttributeStartsWith)).size() > 0;
-
-        TestCase.assertEquals(error, driver.findElement(By.cssSelector(cssAttributeStartsWith)));
-        TestCase.assertTrue(result);
-
-        if (result){
-            JavascriptExecutor js = (JavascriptExecutor)driver;
-            js.executeScript("sauce:job-result=" + (result));
-        }
+        assertTrue(signInPage.hasErrorMessage());
     }
 
     @Test
     public void signInBlankPassword() {
-        driver.get("https://www.saucedemo.com");
+        SignInPage signInPage = SignInPage.visit(driver);
+        signInPage.signInUnsuccessfully(User.blankPassword());
 
-        Map<String, String> blankPassword = new HashMap<String, String>();
-        blankPassword.put("password", "");
-
-        User user = User.blankPassword();
-        String username = user.getUsername();
-        String password = user.getPassword();
-
-
-        WebDriverWait explicitWait = new WebDriverWait(driver, 10);
-
-        WebElement usernameElement = explicitWait.until(
-                ExpectedConditions.presenceOfElementLocated(By.cssSelector("[data-test='username']")));
-
-        usernameElement.sendKeys(username);
-        driver.findElement(By.cssSelector("[data-test='password']")).sendKeys(password);
-        driver.findElement(By.className("login-button")).submit();
-
-        WebElement error = explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.className("fa-times-circle")));
-        String cssAttributeStartsWith = "svg[data-icon^=times]";
-
-        Boolean result = driver.findElements(By.cssSelector(cssAttributeStartsWith)).size() > 0;
-
-        TestCase.assertEquals(error, driver.findElement(By.cssSelector(cssAttributeStartsWith)));
-        TestCase.assertTrue(result);
-
-        if (result){
-            JavascriptExecutor js = (JavascriptExecutor)driver;
-            js.executeScript("sauce:job-result=" + (result));
-        }
+        assertTrue(signInPage.hasErrorMessage());
     }
 }
