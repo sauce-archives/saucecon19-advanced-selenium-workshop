@@ -4,6 +4,10 @@
 # Log file
 *.log
 
+# IntelliJ files
+.idea/workspace.xml
+.idea/encodings.xml
+
 # BlueJ files
 *.ctxt
 
