@@ -12,11 +12,17 @@ public class SeleniumScript extends Base {
 
     @Test
     public void signInLink() {
+        // Set ChromeDriver
+        System.setProperty("webdriver.chrome.driver", "lib/drivers/chromedriver");
+
+        // Start session (opens browser)
+        WebDriver driver = new ChromeDriver();
+
         // Navigate
-        driver.get("http://a.testaddressbook.com");
+        driver.get("https://www.saucedemo.com");
 
         // Identify location of element
-        By signInLocator = By.id("sign-in");
+        By signInLocator = By.id("login_button_container");
 
         // Ensure browser in correct state before acting
         WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -27,9 +33,11 @@ public class SeleniumScript extends Base {
         signIn.click();
 
         // Record result
-        Boolean result = ("Address Book - Sign In").equals(driver.getTitle());
+        Boolean result = ("Swag Labs").equals(driver.getTitle());
         String status = result ? "passed" : "failed";
         System.out.println(status);
+
+        driver.quit();
     }
 
 }
