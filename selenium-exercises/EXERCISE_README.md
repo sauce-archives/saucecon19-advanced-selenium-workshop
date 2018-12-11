@@ -1,22 +1,29 @@
 # Java Selenium Exercises
 
-This directory contains example **Java** scripts and dependencies for running automated **Selenium tests** both **locally** and on **Sauce Labs**. You can use these scripts to test your Sauce Labs authentication credentials, setup of your automated testing environment, and try out Sauce Labs features such as cross-browser testing. Feel free to copy these files or clone the entire directory to your local environment to experiment with creating your own automated Selenium tests! Below there are some guided exercsies to get you started.
+This directory contains example **Java** scripts and dependencies for running automated **Selenium tests** both **locally** and on **Sauce Labs**. You can use these scripts to test your:
+* Sauce Labs authentication credentials
+* Your automated testing environment setup
+* General Sauce Labs features
 
-#### For Demonstration Purposes Only
+Download the latest [release](https://github.com/saucelabs-training/Getting-Started-with-Selenium/releases) archive and import the project into your local environment and begin experimenting with creating your own automated Selenium tests! 
 
-The code in these scripts is provided on an "AS-IS” basis without warranty of any kind, either express or implied, including without limitation any implied warranties of condition, uninterrupted use, merchantability, fitness for a particular purpose, or non-infringement. These scripts are provided for educational and demonstration purposes only, and should not be used in production. Issues regarding these scripts should be submitted through GitHub. These scripts are maintained by the Technical Services team at Sauce Labs.
+Below are some guided exercsies to get you started.
+
+##### For Demonstration Purposes Only
+
+> The code provided in these scripts is provided on an "AS-IS” basis without warranty of any kind, either express or implied, including without limitation any implied warranties of condition, uninterrupted use, merchantability, fitness for a particular purpose, or non-infringement. These scripts are provided for educational and demonstration purposes only, and should not be used in production. Issues regarding these scripts should be submitted through GitHub. These scripts are maintained by the Technical Services and Info Development teams at Sauce Labs.
 
 <br />
 
 
 ## Prerequisites
 
-See the parent `README.md` of this repository for instructions on how to complete the following:
+See the parent [README](https://github.com/saucelabs-training/Getting-Started-with-Selenium/blob/master/README.md) for instructions on how to complete the following:
 
-* Install Git
-* Install IntelliJ
-* Install JDK
-* Setup Project
+* [Install Git](https://github.com/saucelabs-training/Getting-Started-with-Selenium#install-git)
+* [Install IntelliJ](https://github.com/saucelabs-training/Getting-Started-with-Selenium#install-intellij)
+* [Install JDK](https://github.com/saucelabs-training/Getting-Started-with-Selenium#install-jdk)
+* [Setup Selenium Project](https://github.com/saucelabs-training/Getting-Started-with-Selenium#setup-the-project)
 
 ## Exercise List
 1. Locate Provided Elements
@@ -33,7 +40,7 @@ See the parent `README.md` of this repository for instructions on how to complet
 
 ### Exercise 1: Locate Provided Elements
 
-1. Checkout branch `065 `.
+1. Checkout branch `01_locate_elements `.
 2. Navigate to **src > test > exercsies > Location**.
 3. Visit [www.saucedemo.com](https://www.saucedemo.com) and use the developer tools to inspect the following elements:
     * Username Field
@@ -52,7 +59,7 @@ See the parent `README.md` of this repository for instructions on how to complet
 
     ![Location-Failed Example](images/locations-failed.png)
     
-7. The test failed because there is more than one **`input`** tag with the class name **`"log-input"`**. In order to differentiate the two tags, checkout branch `066` and navigate to the **`locatePasswordField()`** class method. Enter a valid CSS selector in the following:
+7. The test failed because there is more than one **`input`** tag with the class name **`"log-input"`**. Navigate to the **`locatePasswordField()`** class method. Enter a valid CSS selector in the following:
     ```
     String cssSelector = "";
     ```
@@ -66,7 +73,7 @@ See the parent `README.md` of this repository for instructions on how to complet
 
 ### Exercise 2: Implement Advanced Locators
 
-1. Checkout branch `067 `.
+1. Checkout branch `02_advanced_locations `.
 2. Navigate to **src > test > exercises > LocationAdvanced**.
 3. Visit [www.saucedemo.com](https://www.saucedemo.com) and use a browser developer tool to create, validate, and test CSS Selectors. For example in Google Chrome navigate to **View > Developer > Developer Tools** and use the console like so:
     
@@ -110,14 +117,14 @@ See the parent `README.md` of this repository for instructions on how to complet
 
     ![LocationAdvanced-Passed Example](images/locationsAdvanced-passed.png)
     
-Checkout branch `068` to see the answers.
+Checkout the next branch to see the answers.
 
 <br />
     
 ### Exercise 3: Create Element Actions
 
-1. Checkout branch `068 `.
-2. Navigate to **src > test > exercsies > Actions**.
+1. Checkout branch `03_test_actions`.
+2. Navigate to **src > test > exercises > Actions**.
 3. In the `@Test` method **`signUpExistingAccount()`**, make note of the following variables:
     ```
     String username = "standard_user";
@@ -133,11 +140,11 @@ Checkout branch `068` to see the answers.
 8. Save your changes and run the **Actions** class, you should see the following output:
    ![Actions Example](images/actions-passed.png)
    
-   Checkout branch `069` to see the answers.
+   Checkout the next branch to see the answers.
    <br />
 
 ### Exercise 4: Implement Full Journey
-1. Checkout branch `069 `.
+1. Checkout branch `04_full_journey`.
 2. Navigate to **src > test > exercsies > UserJourney**. 
 3. Fill out the following **`String`** variables:
     ```
@@ -152,7 +159,7 @@ Checkout branch `068` to see the answers.
     
 ### Exercise 5: Write Test Assertion
 #### Part One: Run the Test on Sauce Labs
-1. Checkout branch `070`.
+1. Checkout branch `05_test_assertions`.
 2. Navigate to **src > test > authentication > LogInTest**
 3. In the IntelliJ toolbar navigate to **Run > Run Edit Configuration**.
 4. In the configuration dialog box, locate **Environment Variables** and click the folder icon
@@ -335,5 +342,5 @@ Checkout branch `068` to see the answers.
     driver.findElement(loginButton).click();
     ```
 5. Save your changes and run all tests in the **LogInTest** class to confirm if they still pass in both IntelliJ and the Sauce Labs Dashboard.
-6. To see the answers, checkout branch `09_base_page_example`
-    >To test your knowledge, try and create a `BasePage` object to abstract re-usable actions such as `sendKeys()` and `click()`. You can checkout the branch `09_complete_answers` to see the answer.
+6. To see the answers, checkout branch `09_complete_answers`
+    >To test your knowledge, try and create a `BasePage` object to abstract re-usable actions such as `sendKeys()` and `click()`. You can checkout the branch `09_base_page_example` to see the answer.

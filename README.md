@@ -1,6 +1,6 @@
-# Java Selenium Examples
+# Getting Started with Selenium
 
-This directory contains example scripts and dependencies for running automated Selenium tests on Sauce Labs using Java. You can use these scripts to test your Sauce Labs authentication credentials, the setup of your automated testing environment, and try out Sauce Labs features, like cross-browser testing. Feel free to copy these files or clone the entire directory to your local environment to experiment with creating your own automated Selenium tests!
+This directory contains example scripts and dependencies for the e-learning course: [Getting Started with Selenium](https://training.saucelabs.com/course/getting-started-with-selenium). Use these scripts to test your Sauce Labs authentication credentials, setup your automated testing environment, try out Sauce Labs features, and complete the in-class Selenium examples. Download the zip file or clone the entire directory to your local environment.
 
 #### For Demonstration Purposes Only
 
@@ -8,15 +8,14 @@ The code in these scripts is provided on an "AS-IS” basis without warranty of 
 
 <br />
 
-## Description
+## Getting Started
 
 These procedures will show you to set up a Selenium environment for Java. The scripts in this repository allow you run a simple automated test to validate your Selenium environment and your [saucelabs.com](https://app.saucelabs.com/login) account credentials.
 
-<br />
 
-## Exercises
+##### Exercises
 
-To begin the exercises refer [to this page](selenium-exercsies/EXERCISE_README.md).
+If you've already setup your test environment refer to the [EXERCISE_README.md](./selenium-exercises/EXERCISE_README.md) file to begin the exercises.
 
 ## Prerequisites
 
