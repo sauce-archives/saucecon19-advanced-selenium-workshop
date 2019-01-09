@@ -1,6 +1,6 @@
-# Getting Started with Selenium
+# Advanced Selenium
 
-This directory contains example scripts and dependencies for the e-learning course: [Getting Started with Selenium](https://training.saucelabs.com/course/getting-started-with-selenium). Use these scripts to test your Sauce Labs authentication credentials, setup your automated testing environment, try out Sauce Labs features, and complete the in-class Selenium examples. Download the zip file or clone the entire directory to your local environment.
+This directory contains example scripts and dependencies for Advanced Selenium Workshop. Use these scripts to test your Sauce Labs authentication credentials, setup your automated testing environment, try out Sauce Labs features, and complete the in-class Selenium examples. Download the zip file or clone the entire directory to your local environment.
 
 #### For Demonstration Purposes Only
 
@@ -8,23 +8,17 @@ The code in these scripts is provided on an "AS-IS” basis without warranty of 
 
 <br />
 
-## Getting Started
-
-These procedures will show you to set up a Selenium environment for Java. The scripts in this repository allow you run a simple automated test to validate your Selenium environment and your [saucelabs.com](https://app.saucelabs.com/login) account credentials.
-
-
-##### Exercises
-
-If you've already setup your test environment refer to the [EXERCISE_README.md](./selenium-exercises/EXERCISE_README.md) file to begin the exercises.
-
 ## Prerequisites
 
+These procedures will show you to set up a Selenium environment for Java. The scripts in this repository allow you run a simple automated test to validate your Selenium environment and your [saucelabs.com](https://app.saucelabs.com/login) account credentials.
 In order to complete these exercises you must complete the following prerequisite installation and configuration steps:
 
 * Install Git
 * Install IntelliJ
 * Install JDK
 * Setup Project
+
+Once your test environment is up and running, refer to the [exercise guides](exercise-guides/getting-started.md) to begin the exercises.
 
 ### Install Git
 
@@ -77,7 +71,7 @@ integration/continuous development toolchain.
 You should accept all the default settings.
 <br />
 
-### Install the Java Developer's Kit (JDK)
+### Install the JDK
 
 The [Java SE Developer Kit](http://www.oracle.com/technetwork/java/javase/overview/index.html) lets you develop and 
 deploy Java applications on desktops and servers. It is needed to compile our test code.
