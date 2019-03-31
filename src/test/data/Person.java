@@ -18,4 +18,10 @@ public class Person {
     public static Person random() {
         return new Person();
     }
+
+    public static Person beverlyHills() {
+        Person person = new Person();
+        person.zipCode = "90210";
+        return person;
+    }
 }
