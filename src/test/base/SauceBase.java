@@ -4,8 +4,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.rules.TestName;
+import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
@@ -20,18 +21,21 @@ public class SauceBase {
 
     @Before
     public void setup() throws MalformedURLException {
-        DesiredCapabilities desiredCapabilities = DesiredCapabilities.chrome();
-        desiredCapabilities.setCapability("version", "70");
-        desiredCapabilities.setCapability("platform", "Windows 10");
-        desiredCapabilities.setCapability("name", name.getMethodName());
-        desiredCapabilities.setCapability("seleniumVersion", "3.14.159");
+        MutableCapabilities sauceOptions = new MutableCapabilities();
+        sauceOptions.setCapability("name", name.getMethodName());
+        sauceOptions.setCapability("seleniumVersion", "3.141.59");
+        sauceOptions.setCapability("username", System.getenv("SAUCE_USERNAME"));
+        sauceOptions.setCapability("accessKey", System.getenv("SAUCE_ACCESS_KEY"));
 
-        String username = System.getenv("SAUCE_USERNAME");
-        String accessKey = System.getenv("SAUCE_ACCESS_KEY");
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.setExperimentalOption("w3c", true);
+        chromeOptions.setCapability("browserVersion", "70.0");
+        chromeOptions.setCapability("platformName", "windows 10");
+        chromeOptions.setCapability("sauce:options", sauceOptions);
 
-        URL url = new URL("https://"+username+":"+accessKey+"@ondemand.saucelabs.com:443/wd/hub");
+        URL url = new URL("https://ondemand.saucelabs.com:443/wd/hub");
 
-        driver = new RemoteWebDriver(url, desiredCapabilities);
+        driver = new RemoteWebDriver(url, chromeOptions);
 
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     }
