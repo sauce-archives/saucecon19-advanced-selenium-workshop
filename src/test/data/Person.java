@@ -9,12 +9,13 @@ public class Person {
     public String zipCode;
     private static Faker faker = new Faker();
 
-    public static Person random() {
-        Person person = new Person();
-        person.firstName = faker.name().firstName();
-        person.lastName = faker.name().lastName();
-        person.zipCode = faker.address().zipCode();
+    public Person() {
+        this.firstName = faker.name().firstName();
+        this.lastName = faker.name().lastName();
+        this.zipCode = faker.address().zipCode();
+    }
 
-        return person;
+    public static Person random() {
+        return new Person();
     }
 }
