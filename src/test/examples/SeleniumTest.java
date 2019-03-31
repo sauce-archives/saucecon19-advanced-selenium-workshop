@@ -2,9 +2,9 @@ package test.examples;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
-import test.base.Base;
+import test.base.SauceBase;
 
-public class SeleniumTest extends Base {
+public class SeleniumTest extends SauceBase {
 
     @Test
     public void firstTest() {
