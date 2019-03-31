@@ -36,6 +36,15 @@ public class ImperativeDeclarative extends Base {
     public void declarative() {
         Product product = Product.valid();
 
+        InventoryPage inventoryPage = InventoryPage.visit(driver);
+        inventoryPage.selectProduct(product);
+
+        ProductPage productPage = new ProductPage(driver);
+        productPage.addToCart();
+        productPage.checkout();
+
+        CartPage cartPage = new CartPage(driver);
+        assertTrue(cartPage.hasProduct(product));
     }
 }
 
