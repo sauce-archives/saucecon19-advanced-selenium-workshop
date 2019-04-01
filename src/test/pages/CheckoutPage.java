@@ -7,6 +7,11 @@ import test.data.Person;
 
 public class CheckoutPage {
 
+    private By firstName = By.id("first-name");
+    private By lastName = By.id("last-name");
+    private By zipCode = By.id("postal-code");
+    private By submit = By.className("cart_button");
+
     private WebDriver driver;
 
     public static CheckoutPage visit(WebDriver driver) {
