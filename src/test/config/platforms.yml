@@ -1,0 +1,18 @@
+windows_10_edge:
+  sauce:
+    selenium_version: '3.141.59'
+  browser_name: edge
+  platform_name: Windows 10
+  browser_version: '18.17763'
+mac_mojave_safari:
+  sauce:
+    selenium_version: '3.141.59'
+  browser_name: safari
+  platform_name: macOS 10.14
+  browser_version: '12.0'
+windows_7_firefox:
+  sauce:
+    selenium_version: '3.141.59'
+  browser_name: firefox
+  platform_name: Windows 7
+  browser_version: '60.0'
