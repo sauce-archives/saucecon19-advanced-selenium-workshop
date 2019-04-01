@@ -6,13 +6,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class HomePage {
+public class HomePage extends BasePage {
 
     private By username = By.id("user-name");
     private By password = By.id("password");
     private By submit = By.className("btn_action");
-
-    private WebDriver driver;
 
     public static HomePage visit(WebDriver driver) {
         driver.get("https://www.saucedemo.com/");
@@ -24,9 +22,9 @@ public class HomePage {
     }
 
     public void signIn(User user) {
-        driver.findElement(username).sendKeys(user.getUsername());
-        driver.findElement(password).sendKeys(user.getPassword());
-        driver.findElement(submit).click();
+        sendKeys(username, user.getUsername());
+        sendKeys(password, user.getPassword());
+        click(submit);
     }
 
 
