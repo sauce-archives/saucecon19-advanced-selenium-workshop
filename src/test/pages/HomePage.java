@@ -19,21 +19,21 @@ public class HomePage {
         this.driver = driver;
     }
 
+    public void signIn(User user) {
+        driver.findElement(username).sendKeys(user.getUsername());
+        driver.findElement(password).sendKeys(user.getPassword());
+        driver.findElement(submit).click();
+    }
+
+
+    // These are here for previous exercises
     public WebElement getUsername() {
         return driver.findElement(By.id("user-name"));
     }
-
     public WebElement getPassword() {
         return driver.findElement(By.id("password"));
     }
-
     public WebElement getSubmit() {
         return driver.findElement(By.className("btn_action"));
-    }
-
-    public void signIn(User user) {
-        getUsername().sendKeys(user.getUsername());
-        getPassword().sendKeys(user.getPassword());
-        getSubmit().click();
     }
 }
