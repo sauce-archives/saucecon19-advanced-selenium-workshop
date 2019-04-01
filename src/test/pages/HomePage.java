@@ -22,9 +22,9 @@ public class HomePage extends BasePage {
     }
 
     public void signIn(User user) {
-        sendKeys(username, user.getUsername());
-        sendKeys(password, user.getPassword());
-        click(submit);
+        getElement(username).sendKeys(user.getUsername());
+        getElement(password).sendKeys(user.getPassword());
+        getElement(submit).click();
     }
 
 
