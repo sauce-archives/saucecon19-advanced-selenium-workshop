@@ -18,5 +18,10 @@ public class CheckoutInformationTest extends Base {
 
     @Test
     public void checkout() {
+        CheckoutPage checkoutPage = CheckoutPage.visit(driver);
+        checkoutPage.enterInformation();
+
+        CheckoutOverviewPage checkoutOverviewPage = new CheckoutOverviewPage(driver);
+        assertTrue(checkoutOverviewPage.onPage());
     }
 }
