@@ -8,6 +8,10 @@ import org.openqa.selenium.WebElement;
 
 public class HomePage {
 
+    private By username = By.id("user-name");
+    private By password = By.id("password");
+    private By submit = By.className("btn_action");
+
     private WebDriver driver;
 
     public static HomePage visit(WebDriver driver) {
