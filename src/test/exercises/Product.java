@@ -12,9 +12,15 @@ public class Product {
     public String price;
 
     public Product() {
+        this.name = "Sauce Labs Backpack";
+        this.price = "29.99";
     }
 
     public static Product fleeceJacket() {
-        return new Product();
+        Product product = new Product();
+        product.name = "Sauce Labs Fleece Jacket";
+        product.price = "49.99";
+
+        return product;
     }
 }
