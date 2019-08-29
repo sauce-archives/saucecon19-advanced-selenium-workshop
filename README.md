@@ -119,7 +119,7 @@ Double-click the installer package to begin the installation.
     * Browse to the **junit_tests** directory, and click **Open**.
     * Click the **Sidebars** icon in the lower left corner of IntelliJ to open the sidebars.
     * Open the **Project** sidebar and expand the directories **lib > src > test**.
-    * In the **test/examples** directory, double click **SeleniumScript**, and a sample file will load into the editor window.
+    * In the **test/examples** directory, double click **LocalExecution**, and a sample file will load into the editor window.
 
 3. Configure the Project SDK
 
@@ -131,8 +131,8 @@ Double-click the installer package to begin the installation.
     * Click **OK** when the installation completes.
 
 4. Confirm that Selenium is Running
-    * In the file list on the left, right-click on the **SeleniumScript** file.
-    * Select **Run 'SeleniumScript'**.
+    * In the file list on the left, right-click on the **LocalExecution** file.
+    * Select **Run 'LocalExecution'**.
         >You should see the code begin to build, and then a console window will open. You should see that the driver opens and 
         closes a browser, confirming that the Selenium environment is running on your local machine.
 
@@ -159,7 +159,7 @@ Double-click the installer package to begin the installation.
     * Click the **Sidebars** icon in the lower left corner of IntelliJ to open the sidebars.
     * Open the **Project** sidebar.
     * In the Project sidebar, expand the directories **junit_tests > lib > src > test > examples**.
-    * Select **SeleniumScript**, and a sample file will load into the editor window.
+    * Select **LocalExecution**, and a sample file will load into the editor window.
 
 3. Configure the Project SDK
 
@@ -171,8 +171,8 @@ Double-click the installer package to begin the installation.
     * Click **OK** when the installation completes.
 
 4. Confirm that Selenium is Running
-    * In the file list on the left, right-click on the **SeleniumScript** file.
-    * Select **Run 'SeleniumScript'**.
+    * In the file list on the left, right-click on the **LocalExecution** file.
+    * Select **Run 'LocalExecution'**.
         > You should see the code begin to build, and then a console window will open. You should see that the driver opens and 
         closes a browser, confirming that the Selenium environment is running on your local machine.
 
